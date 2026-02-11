@@ -17,4 +17,4 @@ Proyecto en Java sobre javones y mazmorras
 -Clase Inventario
 -Clase Equipamiento
 
-
+dsadasdas
