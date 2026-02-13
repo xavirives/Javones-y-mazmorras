@@ -1,0 +1,32 @@
+package javonesymazmorras;
+
+public class Ladron extends Personaje {
+    private boolean invisible;
+
+    public Ladron(String nombre, int nivel, int puntosVida) {
+        super(nombre, nivel, puntosVida);
+        this.invisible = false;
+    }
+
+    public void robar() {
+        if (invisible) {
+            System.out.println(getNombre() + " roba sin ser visto... (está invisible)");
+        } else {
+            System.out.println(getNombre() + " intenta robar... pero se le ve perfectamente.");
+        }
+    }
+
+    public void hacerseInvisible() {
+        invisible = !invisible;
+        System.out.println(getNombre() + " cambia su invisibilidad a: " + invisible);
+    }
+
+    public boolean estaInvisible() {
+        return invisible;
+    }
+
+    public void mostrarInfo() {
+        super.mostrarInfo();
+        System.out.println("Invisible: " + invisible);
+    }
+}
