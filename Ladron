@@ -30,3 +30,4 @@ public class Ladron extends Personaje {
         System.out.println("Invisible: " + invisible);
     }
 }
++
