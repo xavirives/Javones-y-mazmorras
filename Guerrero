@@ -1,0 +1,43 @@
+public class Guerrero extends Personaje {
+    private Personaje companeroProtegido;
+
+    public Guerrero(String nombre, int nivel, int puntosVida) {
+        super(nombre, nivel, puntosVida);
+        this.companeroProtegido = null;
+    }
+
+    public void proteger(Personaje companero) {
+
+        if (companeroProtegido != null) {
+            dejarDeProteger();
+        }
+
+        companeroProtegido = companero;
+        companero.setProtegido(true);
+        System.out.println(getNombre() + " ahora protege a " + companero.getNombre());
+    }
+
+    public void dejarDeProteger() {
+        if (companeroProtegido != null) {
+            companeroProtegido.setProtegido(false);
+            System.out.println(getNombre() + " deja de proteger a " + companeroProtegido.getNombre());
+            companeroProtegido = null;
+        } else {
+            System.out.println(getNombre() + " no está protegiendo a nadie.");
+        }
+    }
+
+    public Personaje estaProtegiendo() {
+        return companeroProtegido;
+    }
+
+    public void mostrarInfo() {
+        super.mostrarInfo();
+        if (companeroProtegido != null) {
+            System.out.println("Protegiendo a: " + companeroProtegido.getNombre());
+        } else {
+            System.out.println("No está protegiendo a nadie.");
+        }
+    }
+}
++
